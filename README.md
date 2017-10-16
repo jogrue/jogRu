@@ -1,5 +1,5 @@
 # jogRu
-A collection of functions I developed during working with R. They are intended for my personal usage, but perhaps you find some of it useful.
+jogRu is an R package for a bunch of functions I wrote during working with R. They are intended for my personal usage, but perhaps you find some of it useful.
 
 It is installed from within R using [devtools](https://github.com/hadley/devtools):
 
@@ -7,3 +7,7 @@ It is installed from within R using [devtools](https://github.com/hadley/devtool
 library(devtools)
 devtools::install_github("jogrue/jogRu")
 ```
+
+# License
+
+This software dedicated to the public domain and licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
