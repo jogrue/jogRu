@@ -16,7 +16,7 @@ Defaults to 0 for no truncation.}
 Defaults to 0 for no truncation.}
 }
 \value{
-A data matrix with variable names (as rownames), variable labels, and
+A data frame with variable names, variable labels, and
 value labels.
 }
 \description{

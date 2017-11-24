@@ -82,11 +82,13 @@ get_value_labels <- function(x, truncate = 0) {
 #' @param trunc_varlab The maximum number of characters for variable labels.
 #' Defaults to 0 for no truncation.
 #'
-#' @return A data matrix with variable names (as rownames), variable labels, and
+#' @return A data frame with variable names, variable labels, and
 #' value labels.
 #' @export
 get_overview <- function(x, trunc_varlab = 0, trunc_vallab = 0) {
-  overview <- cbind(varlab = get_variable_labels(x, truncate = trunc_varlab),
-                    vallab = get_value_labels(x, truncate = trunc_vallab))
+  overview <- data.frame(var = names(x),
+                         varlab =
+                           get_variable_labels(x, truncate = trunc_varlab),
+                         vallab = get_value_labels(x, truncate = trunc_vallab))
   return(overview)
 }
