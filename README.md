@@ -10,4 +10,4 @@ devtools::install_github("jogrue/jogRu")
 
 # License
 
-This software dedicated to the public domain and licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+This software is dedicated to the public domain and licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
