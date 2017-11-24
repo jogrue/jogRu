@@ -72,9 +72,9 @@ get_value_labels <- function(x, truncate = 0) {
 
 #' Overview over all variables and their labels in a data set
 #'
-#' get_overview returns a matrix with variable and value labels, variable names
-#' are included as row names. It should be used with data imported by the
-#' \link{haven} package.
+#' get_overview returns a data.frame with variable names, variable labels, and
+#' value labels. It should be used with data imported by the \link{haven}
+#' package.
 #'
 #' @param x A tibble (read in by the haven package).
 #' @param trunc_vallab The maximum number of characters for value labels.
@@ -86,9 +86,8 @@ get_value_labels <- function(x, truncate = 0) {
 #' value labels.
 #' @export
 get_overview <- function(x, trunc_varlab = 0, trunc_vallab = 0) {
-  overview <- data.frame(var = names(x),
-                         varlab =
-                           get_variable_labels(x, truncate = trunc_varlab),
-                         vallab = get_value_labels(x, truncate = trunc_vallab))
-  return(overview)
+  overview <- cbind(var = names(x),
+                    varlab = get_variable_labels(x, truncate = trunc_varlab),
+                    vallab = get_value_labels(x, truncate = trunc_vallab))
+  return(data.frame(overview))
 }
