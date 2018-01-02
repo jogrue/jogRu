@@ -1,24 +1,29 @@
 #' Invert a variable
 #'
 #' invert_variable returns the variable with an inverted scale. The heighest
-#' possible value for a variable can be provided. If max_value is not provided,
-#' the maximal value is computed from x.
+#' possible value for a variable can be provided. If min_value or max_value is
+#' not provided, the respective value is computed from x.
 #'
 #' For a variable with values between 1 and 5, 1 will become 5, 2 will become 4,
 #' 1 will become 5, and so on.
 #'
 #' @param x A numeric variable.
+#' @param min_value Optional, the lowest possible value on the variable's
+#' scale.
 #' @param max_value Optional, the heighest possible value on the variable's
 #' scale.
 #'
 #' @return The same variable with an inverted scale.
 #'
 #' @export
-invert_variable <- function(x, max_value) {
-  if (missing(max_value)) {
+invert_variable <- function(x, min_value = NULL, max_value = NULL) {
+  if (is.null(max_value)) {
     max_value <- max(x, na.rm = TRUE)
   }
-  x_inv <- max_value + 1 - x
+  if (is.null(min_value)) {
+    min_value <- min(x, na.rm = TRUE)
+  }
+  x_inv <- max_value + min_value - x
   # label
   lbl <- attr(x, which = "label", exact = TRUE)
   if (!is.null(lbl)) {

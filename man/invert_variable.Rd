@@ -4,10 +4,13 @@
 \alias{invert_variable}
 \title{Invert a variable}
 \usage{
-invert_variable(x, max_value)
+invert_variable(x, min_value = NULL, max_value = NULL)
 }
 \arguments{
 \item{x}{A numeric variable.}
+
+\item{min_value}{Optional, the lowest possible value on the variable's
+scale.}
 
 \item{max_value}{Optional, the heighest possible value on the variable's
 scale.}
@@ -17,8 +20,8 @@ The same variable with an inverted scale.
 }
 \description{
 invert_variable returns the variable with an inverted scale. The heighest
-possible value for a variable can be provided. If max_value is not provided,
-the maximal value is computed from x.
+possible value for a variable can be provided. If min_value or max_value is
+not provided, the respective value is computed from x.
 }
 \details{
 For a variable with values between 1 and 5, 1 will become 5, 2 will become 4,
