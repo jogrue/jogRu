@@ -24,7 +24,6 @@ descriptives <- function(x, name="", histogram = TRUE, barplot = FALSE,
   # }
 }
 
-# Berechnet das ordinale Alpha auf Basis der polychorischen Korrelationsmatrix
 #' Ordinal alpha
 #'
 #' Calculates the ordinal alpha by using polychoric correlation (see Zumbo et
