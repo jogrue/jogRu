@@ -6,7 +6,6 @@ Authors@R: person("Johann", "Gründl", email = "mail@johanngruendl.at",
 Description: A collection of functions I developed during working with
     R. They are intended for my personal usage, but perhaps you find some of it
     useful.
-Depends: R (>= 3.4)
 License: CC0
 Encoding: UTF-8
 LazyData: true
