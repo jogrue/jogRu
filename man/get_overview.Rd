@@ -21,6 +21,6 @@ value labels.
 }
 \description{
 get_overview returns a data.frame with variable names, variable labels, and
-value labels. It should be used with data imported by the \link{haven}
+value labels. It should be used with data imported by the haven
 package.
 }

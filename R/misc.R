@@ -15,8 +15,6 @@
 #' @export
 descriptives <- function(x, name="", histogram = TRUE, barplot = FALSE,
                          densityplot = TRUE, savePDF = FALSE, noPlot = FALSE) {
-  require(Hmisc)
-  require(psych)
   print(Hmisc::describe(x))
   print(psych::describe(x))
   # if (noPlot) {} else {
@@ -37,8 +35,7 @@ descriptives <- function(x, name="", histogram = TRUE, barplot = FALSE,
 #'
 #' @references Zumbo, B. D., Gadermann, A. M., & Zeisser, C. (2007). Ordinal Versions of Coefficients Alpha and Theta for Likert Rating Skales. Journal of Modern Applied Statistical Methods, 6(1), 21–29.
 ordinal_alpha <- function(x){
-  require(psych)
-  psych::alpha(polychoric(x)$rho)
+  psych::alpha(psych::polychoric(x)$rho)
 }
 
 
@@ -101,9 +98,9 @@ get_CI <- function(x, conf.level = 0.95, dist = "t",
   sd <- sd(x)
   se <- sd/sqrt(n)
   if (zdist) {
-    error <- qnorm(p = (1+conf.level)/2)*se # Same as 1-((1-conf.level)/2)
+    error <- stats::qnorm(p = (1+conf.level)/2)*se # Same as 1-((1-conf.level)/2)
   } else {
-    error <- qt(p = (1+conf.level)/2, df = n-1)*se
+    error <- stats::qt(p = (1+conf.level)/2, df = n-1)*se
   }
   lower <- mean-error
   upper <- mean+error
